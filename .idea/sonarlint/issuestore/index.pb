@@ -11,3 +11,5 @@ R
 "contracts/interest-rate-model.clar,4/2/42687b1a4691c71de2bd1fa3d82885ccf97b70cf
 J
 contracts/liquidation.clar,9/1/91d73d8895d968e85fc1de384f96354cc974a7dc
+K
+contracts/price-oracle.clar,3/1/319b4abbef04cafcf7aaa7c78d70fc93a0c3566a
