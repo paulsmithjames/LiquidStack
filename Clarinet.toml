@@ -5,6 +5,11 @@ authors = []
 telemetry = true
 cache_dir = './.cache'
 requirements = []
+[contracts.interest-rate-model]
+path = 'contracts/interest-rate-model.clar'
+clarity_version = 2
+epoch = 2.5
+
 [contracts.lending-pool]
 path = 'contracts/lending-pool.clar'
 clarity_version = 2
