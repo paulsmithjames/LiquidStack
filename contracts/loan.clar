@@ -80,3 +80,16 @@
   (ok (unwrap! (map-get? loans { loan-id: loan-id }) err-invalid-loan))
 )
 
+(define-public (update-loan-status (loan-id uint) (new-status (string-ascii 20)))
+  (let
+    (
+      (loan (unwrap! (map-get? loans { loan-id: loan-id }) err-invalid-loan))
+    )
+    (asserts! (or (is-eq tx-sender (get borrower loan)) (is-eq tx-sender (as-contract tx-sender))) err-unauthorized)
+    (ok (map-set loans
+      { loan-id: loan-id }
+      (merge loan { status: new-status })
+    ))
+  )
+)
+

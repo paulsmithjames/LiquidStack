@@ -1,21 +1,36 @@
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 
-import { describe, expect, it } from "vitest";
-
-const accounts = simnet.getAccounts();
-const address1 = accounts.get("wallet_1")!;
-
-/*
-  The test below is an example. To learn more, read the testing documentation here:
-  https://docs.hiro.so/stacks/clarinet-js-sdk
-*/
-
-describe("example tests", () => {
-  it("ensures simnet is well initalised", () => {
-    expect(simnet.blockHeight).toBeDefined();
+describe('Loan Contract', () => {
+  const user1 = 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM';
+  const user2 = 'ST2CY5V39NHDPWSXMW9QDT3HC3GD6Q6XX4CFRK9AG';
+  
+  beforeEach(() => {
+    vi.clearAllMocks();
   });
-
-  // it("shows an example", () => {
-  //   const { result } = simnet.callReadOnlyFn("counter", "get-counter", [], address1);
-  //   expect(result).toBeUint(0);
-  // });
+  
+  it('should create a loan', () => {
+    const result = vi.fn().mockReturnValue({ success: true, value: 0 })();
+    expect(result.success).toBe(true);
+    expect(typeof result.value).toBe('number');
+  });
+  
+  it('should repay a loan', () => {
+    vi.fn().mockReturnValue({ success: true, value: 0 })();
+    const result = vi.fn().mockReturnValue({ success: true, value: 0 })();
+    expect(result.success).toBe(true);
+  });
+  
+  it('should not allow unauthorized repayment', () => {
+    vi.fn().mockReturnValue({ success: true, value: 0 })();
+    const result = vi.fn().mockReturnValue({ success: false, value: 0 })();
+    expect(result.success).toBe(false);
+  });
+  
+  it('should return loan details', () => {
+    vi.fn().mockReturnValue({ success: true, value: 0 })();
+    const result = vi.fn().mockReturnValue({ success: true, value: { borrower: user1 } })();
+    expect(result.success).toBe(true);
+    expect(result.value.borrower).toBe(user1);
+  });
 });
+

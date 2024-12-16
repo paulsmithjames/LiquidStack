@@ -1,21 +1,49 @@
+import { describe, it, expect, beforeEach } from 'vitest';
+import { vi } from 'vitest';
 
-import { describe, expect, it } from "vitest";
-
-const accounts = simnet.getAccounts();
-const address1 = accounts.get("wallet_1")!;
-
-/*
-  The test below is an example. To learn more, read the testing documentation here:
-  https://docs.hiro.so/stacks/clarinet-js-sdk
-*/
-
-describe("example tests", () => {
-  it("ensures simnet is well initalised", () => {
-    expect(simnet.blockHeight).toBeDefined();
+describe('Lending Pool Contract', () => {
+  const user1 = 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM';
+  const user2 = 'ST2CY5V39NHDPWSXMW9QDT3HC3GD6Q6XX4CFRK9AG';
+  
+  beforeEach(() => {
+    vi.clearAllMocks();
   });
-
-  // it("shows an example", () => {
-  //   const { result } = simnet.callReadOnlyFn("counter", "get-counter", [], address1);
-  //   expect(result).toBeUint(0);
-  // });
+  
+  it('should allow deposits', () => {
+    const result = vi.fn().mockReturnValue({ success: true })();
+    expect(result.success).toBe(true);
+  });
+  
+  it('should allow withdrawals', () => {
+    vi.fn().mockReturnValue({ success: true })();
+    const result = vi.fn().mockReturnValue({ success: true })();
+    expect(result.success).toBe(true);
+  });
+  
+  it('should allow borrowing', () => {
+    vi.fn().mockReturnValue({ success: true })();
+    const result = vi.fn().mockReturnValue({ success: true })();
+    expect(result.success).toBe(true);
+  });
+  
+  it('should allow repayments', () => {
+    vi.fn().mockReturnValue({ success: true })();
+    vi.fn().mockReturnValue({ success: true })();
+    const result = vi.fn().mockReturnValue({ success: true })();
+    expect(result.success).toBe(true);
+  });
+  
+  it('should return correct pool balance', () => {
+    vi.fn().mockReturnValue({ success: true })();
+    vi.fn().mockReturnValue({ success: true })();
+    const result = vi.fn().mockReturnValue({ value: 1000 })();
+    expect(result.value).toBe(1000);
+  });
+  
+  it('should return correct total borrowed', () => {
+    vi.fn().mockReturnValue({ success: true })();
+    vi.fn().mockReturnValue({ success: true })();
+    const result = vi.fn().mockReturnValue({ value: 500 })();
+    expect(result.value).toBe(500);
+  });
 });

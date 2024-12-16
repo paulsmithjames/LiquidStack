@@ -13,3 +13,13 @@ J
 contracts/liquidation.clar,9/1/91d73d8895d968e85fc1de384f96354cc974a7dc
 K
 contracts/price-oracle.clar,3/1/319b4abbef04cafcf7aaa7c78d70fc93a0c3566a
+J
+tests/lending-pool.test.ts,8/0/808baf850525dd82962d51d26b30a8aa0ae620db
+B
+tests/loan.test.ts,e/4/e48d843a8f793a3722987a8550fcb1ba7f6993b8
+Q
+!tests/interest-rate-model.test.ts,d/4/d40ba9a2a47707d993ce17b75200fcdd2531863f
+I
+tests/liquidation.test.ts,3/9/3993d4d9aa259e9a13d4c6a24ba60922689f5186
+J
+tests/price-oracle.test.ts,3/1/31df387739fbb345ac5317f4b5699e8c034a019b
