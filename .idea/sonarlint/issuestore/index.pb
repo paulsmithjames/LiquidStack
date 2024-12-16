@@ -9,3 +9,5 @@ R
 "contracts/nterest-rate-model_.clar,1/c/1cdf2cb74c9f355b138c1ce5b3803fcd704cff89
 R
 "contracts/interest-rate-model.clar,4/2/42687b1a4691c71de2bd1fa3d82885ccf97b70cf
+J
+contracts/liquidation.clar,9/1/91d73d8895d968e85fc1de384f96354cc974a7dc
